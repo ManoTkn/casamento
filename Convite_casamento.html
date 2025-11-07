@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#556b2f"> <title>Casamento Gabi e Lu</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #f8f8f5; /* Fundo mais claro e suave */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh; /* Garante que o body ocupa a altura total da viewport */
+      box-sizing: border-box;
+      
+    }
+
+    .container {
+      width: 90%;
+      max-width: 30%; /* Aumentei um pouco a largura máxima */
+      background: white;
+      margin: 5% auto; /* Centraliza e adiciona margem superior/inferior */
+      padding: 3% 4%; /* Padding ajustado */
+      border-radius: 2%;
+      box-shadow: 0 2vw 4vw rgba(0,0,0,0.1); /* Sombra mais suave e proeminente */
+      text-align: center;
+      position: relative;
+      overflow: hidden; /* Garante que a imagem não vaze */
+    }
+
+    .header-image {
+      width: calc(100% + 5vw); /* Ajusta para preencher o container com margem negativa */
+      max-width: none; /* Remove a largura máxima para a imagem */
+      margin: -30px -25px 30px -25px; /* Margem negativa para encaixar nas bordas do container */
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      height: 50%; /* Altura fixa para a imagem */
+      object-fit: cover; /* Garante que a imagem cubra a área sem distorcer */
+      object-position: center top; /* Foca no topo da imagem */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Sombra abaixo da imagem */
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5vw; /* Tamanho maior para o título */
+      color: #3d4a39; /* Verde oliva escuro */
+      margin-top: 0;
+      margin-bottom: 0.5vw;
+    }
+
+    h2 { /* Usei h2 para a seção de localização */
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2vw;
+      color: #3d4a39;
+      margin-bottom: 4%;
+    }
+
+    p {
+      color: #555;
+      font-size: 1vw;
+      line-height: 1.6;
+      margin-bottom: 5%;
+    }
+
+    .button-group {
+        margin-top: 1%;
+    }
+
+  .botao {
+  width: 70%; /* Ou a largura que você preferir, ex: 90% */
+  margin: 2% auto; /* Isso centraliza o botão horizontalmente */
+  padding: 2%;
+  font-size: 0.8vw;
+  background-color: #556b2f;
+  color: white;
+  border: none;
+  border-radius: 0.5vw;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2vw 4vw rgba(0,0,0,0.15);
+  text-decoration: none;
+  display: block;
+}
+
+
+    .botao:hover {
+      background-color: #445726; /* Verde oliva mais escuro */
+      transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    }
+
+    .botao:active {
+        transform: translateY(0); /* Efeito de clique */
+    }
+
+    .botao-local {
+      background-color: #6b8e23; /* Verde oliva médio */
+    }
+
+    .botao-local:hover {
+      background-color: #5c7a1d;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: #1ebe5c;
+    }
+
+    hr {
+      margin: 0.2vw 0; /* Mais espaçamento para a linha */
+      border: none;
+      border-top: 1px dashed #ddd; /* Linha tracejada suave */
+    }
+
+    /* Estilo para o ícone de localização */
+    .botao-local::before {
+        content: '📍 ';
+        display: inline-block;
+        margin-right: 2%;
+    }
+
+    /* Media Queries para responsividade */
+ 
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img class="logo" src="img/Gabi&Lu.jpg" height="20%" width="60%">
+
+    <h1>Casamento Gabi e Lu</h1>
+    <p>O amor é paciente, o amor é bondoso (1 Co 13:4-7)</p>
+
+    <p>Escolha o valor e clique para copiar a chave Pix:</p>
+
+    <span id="pix-65" style="display:none;">
+      00020101021126650014br.gov.bcb.pix0114+55549910801130225Casamento Janta Gabi e Lu520400005303986540565.005802BR5925GABRIELE APARECIDA SIQUEI6008BRASILIA62090505Janta630419FF
+    </span>
+
+    <span id="pix-30" style="display:none;">
+      00020101021226550014br.gov.bcb.pix0114+55549910801130215Janta Gabi e Lu520400005303986540530.005802BR5925GABRIELE APARECIDA SIQUEI6008BRASILIA62170513JantaGabiLu306304A957
+    </span>
+
+    <div class="button-group">
+        <button id="btn-65" class="botao">Copiar Pix - R$ 65,00 por pessoa</button>
+        <button id="btn-30" class="botao">Copiar Pix - R$ 30,00 (crianças 7 a 11 anos)</button>
+    </div>
+
+
+    <a href="https://wa.me/555491080113?text=Olá! Encaminhe aqui sua confirmação e o comprovante do Pix." target="_blank" class="botao whatsapp-btn" style="margin-top: 25px;">
+      Enviar comprovante via WhatsApp
+    </a>
+
+    <hr>
+
+    <h2>Informações dos Locais</h2>
+
+    <a href=https://maps.app.goo.gl/tqtPzVDWqWtfhVH77?g_st=aw target="_blank" class="botao botao-local">
+      Igreja da Graça
+    </a>
+
+    <a href=https://maps.app.goo.gl/kCfbwZZcRwxfuNp26 target="_blank" class="botao botao-local">
+      Rancho do Arno
+    </a>
+
+  </div>
+
+  <script>
+    function copiarPix(idPix, idBotao, textoOriginal) {
+      const botao = document.getElementById(idBotao);
+      const codigo = document.getElementById(idPix).textContent.trim();
+
+      botao.addEventListener('click', () => {
+        navigator.clipboard.writeText(codigo).then(() => {
+          botao.textContent = "✅ Pix Copiado!"; // Mensagem mais clara
+          setTimeout(() => botao.textContent = textoOriginal, 2500);
+        }).catch(err => {
+            console.error('Erro ao copiar: ', err);
+            alert('Não foi possível copiar o Pix automaticamente. Por favor, tente copiar manualmente.');
+        });
+      });
+    }
+
+    copiarPix("pix-65", "btn-65", "Copiar Pix - R$ 65,00 por pessoa");
+    copiarPix("pix-30", "btn-30", "Copiar Pix - R$ 30,00 (crianças 7 a 11 anos)");
+  </script>
+
+</body>
+</html>
